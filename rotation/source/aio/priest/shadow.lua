@@ -53,7 +53,7 @@ local function get_shadow_state(context)
    -- Use max rank debuff IDs for reliable detection (consistent with smite.lua)
    shadow_state.vt_remaining = Unit(TARGET_UNIT):HasDeBuffs(Constants.DEBUFF_ID.VAMPIRIC_TOUCH, "player", true) or 0
    shadow_state.swp_active = (Unit(TARGET_UNIT):HasDeBuffs(Constants.DEBUFF_ID.SHADOW_WORD_PAIN, "player", true) or 0) > 0
-   shadow_state.ve_remaining = Unit(TARGET_UNIT):HasDeBuffs(Constants.DEBUFF_ID.VAMPIRIC_EMBRACE, "player", true) or 0
+   shadow_state.ve_remaining = Unit(TARGET_UNIT):HasDeBuffs(Constants.DEBUFF_ID.VAMPIRIC_EMBRACE, nil, true) or 0  -- Check from any source (doesn't stack)
    shadow_state.mb_ready = is_spell_available(A.MindBlast) and A.MindBlast:IsReady(TARGET_UNIT)
    shadow_state.swd_ready = is_spell_available(A.ShadowWordDeath) and A.ShadowWordDeath:IsReady(TARGET_UNIT)
    shadow_state.swd_safe = context.hp > (context.settings.shadow_swd_hp or 40)
