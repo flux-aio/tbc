@@ -270,15 +270,11 @@ rotation_registry:register("holy", {
         matches = function(context, state)
             if not context.in_combat then return false end
             if is_spell_available(A.Berserking) and A.Berserking:IsReady(PLAYER_UNIT) then return true end
-            if is_spell_available(A.ArcaneTorrent) and A.ArcaneTorrent:IsReady(PLAYER_UNIT) then return true end
             return false
         end,
         execute = function(icon, context, state)
             if is_spell_available(A.Berserking) and A.Berserking:IsReady(PLAYER_UNIT) then
                 return A.Berserking:Show(icon), "[HOLY] Berserking"
-            end
-            if is_spell_available(A.ArcaneTorrent) and A.ArcaneTorrent:IsReady(PLAYER_UNIT) then
-                return A.ArcaneTorrent:Show(icon), "[HOLY] Arcane Torrent"
             end
             return nil
         end,

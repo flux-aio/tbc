@@ -121,9 +121,6 @@ local Ret_Racial = {
     end,
 
     execute = function(icon, context, state)
-        if A.ArcaneTorrent:IsReady(PLAYER_UNIT) then
-            return A.ArcaneTorrent:Show(icon), "[RET] Arcane Torrent"
-        end
         if A.Stoneform:IsReady(PLAYER_UNIT) then
             return A.Stoneform:Show(icon), "[RET] Stoneform"
         end

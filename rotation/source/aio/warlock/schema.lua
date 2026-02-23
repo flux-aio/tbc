@@ -164,7 +164,7 @@ _G.FluxAIO_SETTINGS_SCHEMA = {
 
     -- Tab 5: CDs & Mana
     [5] = { name = "CDs & Mana", sections = {
-        S.trinkets("Use racial ability (Blood Fury, Arcane Torrent, etc.) during combat."),
+        S.trinkets("Use racial DPS ability (Blood Fury, etc.) - excludes Arcane Torrent (reserved for interrupts)."),
         { header = "Life Tap", settings = {
             { type = "slider", key = "life_tap_mana_pct", default = 30, min = 10, max = 60, label = "Life Tap Mana%",
               tooltip = "Use Life Tap when mana drops below this.", format = "%d%%" },

@@ -127,16 +127,12 @@ local Frost_Racial = {
         local min_ttd = context.settings.cd_min_ttd or 0
         if min_ttd > 0 and context.ttd and context.ttd > 0 and context.ttd < min_ttd then return false end
         if A.Berserking:IsReady(PLAYER_UNIT) then return true end
-        if A.ArcaneTorrent:IsReady(PLAYER_UNIT) then return true end
         return false
     end,
 
     execute = function(icon, context, state)
         if A.Berserking:IsReady(PLAYER_UNIT) then
             return A.Berserking:Show(icon), "[FROST] Berserking"
-        end
-        if A.ArcaneTorrent:IsReady(PLAYER_UNIT) then
-            return A.ArcaneTorrent:Show(icon), "[FROST] Arcane Torrent"
         end
         return nil
     end,

@@ -146,7 +146,7 @@ _G.FluxAIO_SETTINGS_SCHEMA = {
 
     -- Tab 5: CDs & Defense
     [5] = { name = "CDs & Defense", sections = {
-        S.trinkets("Use racial ability (Blood Fury, Berserking, Arcane Torrent) on cooldown."),
+        S.trinkets("Use racial DPS ability (Blood Fury, Berserking) - excludes Arcane Torrent (reserved for interrupts)."),
         { header = "Energy Recovery", settings = {
             { type = "checkbox", key = "use_thistle_tea", default = true, label = "Use Thistle Tea",
               tooltip = "Auto-use Thistle Tea for +100 energy." },

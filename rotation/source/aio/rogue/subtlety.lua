@@ -172,7 +172,7 @@ local Subtlety_Preparation = {
     end,
 }
 
--- [5] Racial — off-GCD (Blood Fury, Berserking, Arcane Torrent)
+-- [5] Racial — off-GCD (Blood Fury, Berserking)
 local Subtlety_Racial = {
     requires_combat = true,
     is_gcd_gated = false,
@@ -184,7 +184,6 @@ local Subtlety_Racial = {
         if min_ttd > 0 and context.ttd and context.ttd > 0 and context.ttd < min_ttd then return false end
         if A.BloodFury:IsReady(PLAYER_UNIT) then return true end
         if A.Berserking:IsReady(PLAYER_UNIT) then return true end
-        if A.ArcaneTorrent:IsReady(PLAYER_UNIT) then return true end
         return false
     end,
 
@@ -194,9 +193,6 @@ local Subtlety_Racial = {
         end
         if A.Berserking:IsReady(PLAYER_UNIT) then
             return A.Berserking:Show(icon), "[SUBTLETY] Berserking"
-        end
-        if A.ArcaneTorrent:IsReady(PLAYER_UNIT) then
-            return A.ArcaneTorrent:Show(icon), "[SUBTLETY] Arcane Torrent"
         end
         return nil
     end,

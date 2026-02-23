@@ -139,23 +139,19 @@ local Holy_DivineFavor = {
     end,
 }
 
--- [3] Racial (off-GCD — Arcane Torrent restores mana, Stoneform defensive)
+-- [3] Racial (off-GCD — Stoneform defensive, Gift of the Naaru healing)
 local Holy_Racial = {
     requires_combat = true,
     is_gcd_gated = false,
     setting_key = "use_racial",
 
     matches = function(context, state)
-        if A.ArcaneTorrent:IsReady(PLAYER_UNIT) then return true end
         if A.Stoneform:IsReady(PLAYER_UNIT) then return true end
         if A.GiftOfTheNaaru and state.lowest and state.lowest.hp < 60 then return true end
         return false
     end,
 
     execute = function(icon, context, state)
-        if A.ArcaneTorrent:IsReady(PLAYER_UNIT) then
-            return A.ArcaneTorrent:Show(icon), "[HOLY] Arcane Torrent"
-        end
         if A.Stoneform:IsReady(PLAYER_UNIT) then
             return A.Stoneform:Show(icon), "[HOLY] Stoneform"
         end

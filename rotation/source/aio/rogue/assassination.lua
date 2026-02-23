@@ -148,7 +148,7 @@ local Assassination_ColdBlood = {
     end,
 }
 
--- [4] Racial — off-GCD (Blood Fury, Berserking, Arcane Torrent)
+-- [4] Racial — off-GCD (Blood Fury, Berserking)
 local Assassination_Racial = {
     requires_combat = true,
     is_gcd_gated = false,
@@ -160,7 +160,6 @@ local Assassination_Racial = {
         if min_ttd > 0 and context.ttd and context.ttd > 0 and context.ttd < min_ttd then return false end
         if A.BloodFury:IsReady(PLAYER_UNIT) then return true end
         if A.Berserking:IsReady(PLAYER_UNIT) then return true end
-        if A.ArcaneTorrent:IsReady(PLAYER_UNIT) then return true end
         return false
     end,
 
@@ -170,9 +169,6 @@ local Assassination_Racial = {
         end
         if A.Berserking:IsReady(PLAYER_UNIT) then
             return A.Berserking:Show(icon), "[ASSASSINATION] Berserking"
-        end
-        if A.ArcaneTorrent:IsReady(PLAYER_UNIT) then
-            return A.ArcaneTorrent:Show(icon), "[ASSASSINATION] Arcane Torrent"
         end
         return nil
     end,

@@ -195,7 +195,7 @@ _G.FluxAIO_SETTINGS_SCHEMA = {
 
     -- Tab 6: Cooldowns & Mana
     [6] = { name = "CDs & Mana", sections = {
-        S.trinkets("Use racial ability (Berserking, Arcane Torrent, etc.)."),
+        S.trinkets("Use racial DPS ability (Berserking, etc.) - excludes Arcane Torrent (reserved for interrupts)."),
         { header = "Mana Recovery", settings = {
             { type = "checkbox", key = "use_shadowfiend", default = true, label = "Use Shadowfiend",
               tooltip = "Auto-use Shadowfiend for mana recovery." },

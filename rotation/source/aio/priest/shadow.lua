@@ -322,9 +322,6 @@ rotation_registry:register("shadow", {
          if is_spell_available(A.Berserking) and A.Berserking:IsReady(PLAYER_UNIT) then
             return A.Berserking:Show(icon), "[SHADOW] Berserking"
          end
-         if is_spell_available(A.ArcaneTorrent) and A.ArcaneTorrent:IsReady(PLAYER_UNIT) then
-            return A.ArcaneTorrent:Show(icon), "[SHADOW] Arcane Torrent"
-         end
          return nil
       end,
    }),

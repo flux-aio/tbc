@@ -196,7 +196,7 @@ _G.FluxAIO_SETTINGS_SCHEMA = {
 
     -- Tab 5: Cooldowns & Mana
     [5] = { name = "CDs & Mana", sections = {
-        S.trinkets("Use racial ability (Berserking, Arcane Torrent, etc.) during burst."),
+        S.trinkets("Use racial DPS ability (Berserking, etc.) - excludes Arcane Torrent (reserved for interrupts)."),
         { header = "Mana Recovery", settings = {
             { type = "checkbox", key = "use_mana_gem", default = true, label = "Use Mana Gem",
               tooltip = "Auto-use Mana Emerald for mana recovery." },

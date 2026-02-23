@@ -215,9 +215,6 @@ rotation_registry:register("smite", {
             if is_spell_available(A.Berserking) and A.Berserking:IsReady(PLAYER_UNIT) then
                 return A.Berserking:Show(icon), "[SMITE] Berserking"
             end
-            if is_spell_available(A.ArcaneTorrent) and A.ArcaneTorrent:IsReady(PLAYER_UNIT) then
-                return A.ArcaneTorrent:Show(icon), "[SMITE] Arcane Torrent"
-            end
             return nil
         end,
     }),
