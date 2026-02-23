@@ -125,12 +125,12 @@ local Constants = {
     },
 
     DEBUFF_ID = {
-        SHADOW_WORD_PAIN = 25368,
-        VAMPIRIC_TOUCH   = 34917,
+        SHADOW_WORD_PAIN = { 589, 594, 970, 992, 2767, 10892, 10893, 10894, 25367, 25368 },  -- All ranks
+        VAMPIRIC_TOUCH   = { 34914, 34916, 34917 },  -- All ranks (Rank 1-3)
         SHADOW_WEAVING   = 15258,
         VAMPIRIC_EMBRACE = 15290,
-        DEVOURING_PLAGUE = 25467,
-        HOLY_FIRE_DOT    = 25384,
+        DEVOURING_PLAGUE = { 2944, 19276, 19277, 19278, 19279, 19280, 25467 },  -- All ranks
+        HOLY_FIRE_DOT    = { 14914, 15262, 15263, 15264, 15265, 15266, 15267, 15261, 25384 },  -- All ranks
         WEAKENED_SOUL    = 6788,
     },
 
