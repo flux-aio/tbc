@@ -135,7 +135,7 @@ rotation_registry:register("shadow", {
          if state.ve_remaining >= 3 then
             return false
          end
-         -- Range check: VE is 30yd range, same as VT
+         -- Range check: VE is 36yd range
          if not A.VampiricEmbrace:IsInRange(TARGET_UNIT) then
             return false
          end
@@ -162,6 +162,10 @@ rotation_registry:register("shadow", {
          if context.ttd and context.ttd > 0 and context.ttd < 5 then
             return false
          end
+         -- Range check: VT is 36yd range
+         if not A.VampiricTouch:IsInRange(TARGET_UNIT) then
+            return false
+         end
          -- Refresh when remaining <= 1.5s (cast time)
          return state.vt_remaining < 1.8
       end,
@@ -184,6 +188,10 @@ rotation_registry:register("shadow", {
          end
          -- Don't apply if target will die soon
          if context.ttd < 6 then
+            return false
+         end
+         -- Range check
+         if not A.ShadowWordPain:IsInRange(TARGET_UNIT) then
             return false
          end
          return true
@@ -277,6 +285,10 @@ rotation_registry:register("shadow", {
          if context.is_moving then
             return false
          end
+         -- Range check
+         if not A.MindBlast:IsInRange(TARGET_UNIT) then
+            return false
+         end
          return state.mb_ready
       end,
       execute = function(icon, context, state)
@@ -297,6 +309,10 @@ rotation_registry:register("shadow", {
             return false
          end
          if not state.swd_safe then
+            return false
+         end
+         -- Range check
+         if not A.ShadowWordDeath:IsInRange(TARGET_UNIT) then
             return false
          end
          return state.swd_ready
