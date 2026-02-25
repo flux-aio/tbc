@@ -4,8 +4,7 @@
 local _G, setmetatable, pairs, ipairs, tostring, select, type = _G, setmetatable, pairs, ipairs, tostring, select, type
 local GetTime = _G.GetTime
 local GetTotemInfo = _G.GetTotemInfo
-local GetNumPartyMembers = _G.GetNumPartyMembers
-local GetNumRaidMembers = _G.GetNumRaidMembers
+local GetNumGroupMembers = _G.GetNumGroupMembers
 local A = _G.Action
 
 if not A then return end
@@ -292,7 +291,7 @@ rotation_registry:register_class({
         ctx.is_moving = moving ~= nil and moving ~= false and moving ~= 0
         ctx.is_mounted = Player:IsMounted()
         ctx.combat_time = Unit("player"):CombatTime() or 0
-        ctx.in_group = (GetNumPartyMembers() or 0) > 0 or (GetNumRaidMembers() or 0) > 0
+        ctx.in_group = (GetNumGroupMembers() or 0) > 0
 
         -- Shield state
         ctx.has_water_shield = (Unit("player"):HasBuffs(Constants.BUFF_ID.WATER_SHIELD) or 0) > 0
